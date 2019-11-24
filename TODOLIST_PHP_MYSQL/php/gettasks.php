@@ -5,11 +5,21 @@ $listtasks = $conn->getTasks(0);
 
 echo "
         <script type='text/javascript'>
-        function updatetask(titletaskid,desctaskid,submitid,formid){
-            document.getElementById(submitid).innerHTML = 'Valider';
-            document.getElementById(formid).action = 'php/updatetask.php';
-            document.getElementById(titletaskid).removeAttribute('readonly');
-            document.getElementById(desctaskid).removeAttribute('readonly');
+        function updatetask(titletaskid,desctaskid,submitid,formid,updateid){
+            if (document.getElementById(submitid).innerHTML =='Enlever'){
+                document.getElementById(submitid).innerHTML = 'Valider';
+                document.getElementById(formid).action = 'php/updatetask.php';
+                document.getElementById(titletaskid).removeAttribute('readonly');
+                document.getElementById(desctaskid).removeAttribute('readonly');
+                document.getElementById(updateid).innerHTML = 'Annuler';
+            }
+            else {
+                document.getElementById(submitid).innerHTML ='Enlever';
+                document.getElementById(formid).action = 'php/deletetask.php';
+                document.getElementById(titletaskid).setAttribute('readonly',true);
+                document.getElementById(desctaskid).setAttribute('readonly',true);
+                document.getElementById(updateid).innerHTML = 'Modifier';
+            }
         }
         </script>
 ";
@@ -33,7 +43,7 @@ foreach ($listtasks as $task) {
                     <div class='col-md-10'>
                         <textarea id='desctask$taskid' name='desctask' class='form-control' type='text' rows=4 readonly>$taskdesc</textarea>
                         <button id='submit$taskid' type='submit' class='btn btn-primary' >Enlever</button>
-                        <button type='button' onclick=\"updatetask('titletask$taskid','desctask$taskid','submit$taskid','form$taskid')\" class='btn btn-primary' >Modifier</button>
+                        <button id='update$taskid' type='button' onclick=\"updatetask('titletask$taskid','desctask$taskid','submit$taskid','form$taskid','update$taskid')\" class='btn btn-primary' >Modifier</button>
                     </div>
                     <div class='col-md-1'></div>
                 </div>
