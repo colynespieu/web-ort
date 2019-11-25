@@ -30,7 +30,7 @@ foreach ($listtasks as $task) {
     $taskdesc = $task["description"];
 
     echo"
-            <form id='form$taskid' class='small-marge col-md-4' method='post' action='php/deletetask.php'>
+            <form id='form$taskid' class='small-marge-down small-marge col-md-4' method='post' action='php/deletetask.php'>
                 <div class='row'>
                     <div class='col-md-1'></div>
                     <div class='col-md-10'>

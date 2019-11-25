@@ -9,7 +9,7 @@
 
     <body>
         <div class="container global">
-            <h5 class="tiny-marge">TODO list :</h5>
+            <h5 class="tiny-marge">Liste des taches à effectuer</h5>
             <div id="formulaire" class="jumbotron small-marge">
                 <form method="post" action="php/createtask.php">
                     <div class="form-group">
@@ -21,7 +21,7 @@
                     <button type="submit" class="btn btn-primary">Ajouter la tache</button>
                 </form>
             </div>
-            <div id="todo" class="row margin-bottom smarll-marge">
+            <div id="todo" class="row small-marge border">
                 <?php include("php/gettasks.php") ?>
             </div>
         </div>

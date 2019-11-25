@@ -62,6 +62,9 @@ img{
 .small-marge{
     margin-top: 30px;
 }
+.small-marge-down{
+    margin-bottom: 30px;
+}
 .tiny-marge{
     margin-top: 10px;
 }
