@@ -1,7 +1,7 @@
 <?php
 echo "
-        <h5 class='tiny-marge'>Liste des Utilisateurs :</h5>
-        <div id='todo' class='small-marge '>
+        <h5 class='small-marge'>Liste des Utilisateurs :</h5>
+        <div id='todo' class=' '>
 ";
 foreach ($userlist as $user) {
 
@@ -16,7 +16,7 @@ foreach ($userlist as $user) {
             <input  name='userid' type='hidden' value='$userid'>
                 <div class='row'>
                     <div class='col-md-1'></div>
-                    <div class='col-md-2'>
+                    <div class='col-md-3'>
                         <p>Mail :</p>
                         <input id='mail$userid' name='mail' class='form-control' type='text' value=\"$usermail\">
                     </div>
@@ -30,7 +30,7 @@ foreach ($userlist as $user) {
                     </div>
                     <div class='col-md-2'>
                         <p>Pass :</p>
-                        <input id='password$userid' name='password' class='form-control' type='text' value=\"\">
+                        <input type='password' id='password$userid' name='password' class='form-control' type='text' value=\"\">
                     </div>
                     <div class='col-md-2 text-center'>
                         <p>Admin :</p>";

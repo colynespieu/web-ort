@@ -1,5 +1,5 @@
         <div class="container global">
-            <h5 class="tiny-marge">Ajouter un utilisateur :</h5>
+            <h5 class="small-marge">Ajouter un utilisateur :</h5>
             <div id="formulaire" class="jumbotron small-marge">
                 <form method="post" action='?action=addUser'>
                     <div class="form-group">

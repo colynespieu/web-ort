@@ -1,5 +1,5 @@
 <div class="container global">
-            <h5 class="tiny-marge">Ajouter une tache :</h5>
+            <h5 class="small-marge">Ajouter une tache :</h5>
             <div id="formulaire" class="jumbotron small-marge">
                 <form method="post" action='?action=addTask'>
                     <div class="form-group">

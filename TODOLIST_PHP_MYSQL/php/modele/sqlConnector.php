@@ -59,7 +59,6 @@ class Sqlconnector{
         }
         else{
             $password = password_hash($password,PASSWORD_DEFAULT);
-            echo "$password";
             $this->pdo->exec("UPDATE user SET mail=\"$mail_user\", nom=\"$nom_user\",pass=\"$password\" , prenom=\"$prenom_user\", is_admin=\"$is_admin\" WHERE id=$id_user;");
         }
     }

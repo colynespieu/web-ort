@@ -77,11 +77,4 @@ else{
             $controller->disconnect($_POST['userid']);
         }
     }
-    if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
-        // The request is using the DELETE method
-    }
-    if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
-        // The request is using the PUT method
-        echo "PUT";
-    }
 }
