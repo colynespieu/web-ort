@@ -28,7 +28,7 @@ else{
                 $controller->printUsersList();
             }
             else{
-                include("php/views/htmlErrorNoAuthorized.php");
+                $controller->accessDenied();
             }
         }
         elseif ($_GET["Page"] == 'Deconnexion') {

@@ -13,6 +13,10 @@ class controller{
         include('php/views/htmlNavBar.php');
     }
 
+    public function accessDenied(){
+        include("php/views/htmlErrorNoAuthorized.php");
+    }
+
     public function printLoginPage(){
         include('php/views/htmlLogin.php');
     }
@@ -88,7 +92,7 @@ class controller{
     }
 
     public function addUser($mailUser,$nomUser,$prenomUser,$passUser,$isAdminUser){
-        if ((filter_var($mailUser, FILTER_VALIDATE_EMAIL)) and ($nomUser != "")){
+        if ((filter_var($mailUser, FILTER_VALIDATE_EMAIL)) and ($nomUser != "") and ($passUser != "")){
             if ($isAdminUser == "on"){ $isAdmin = 1; }
             else { $isAdmin = 0; }
             $this->conn->addUser($mailUser,$nomUser,$prenomUser,password_hash($passUser,PASSWORD_DEFAULT),$isAdmin);
@@ -110,7 +114,7 @@ class controller{
             echo "<meta http-equiv='refresh' content='3;URL=/?Page=Admin'>";
         }
         else {
-            echo "<p><strong>Il faut mail et nom à l'utilisateur.</strong></p>";
+            echo "<p><strong>Il faut mail, nom et mot de passe à un utilisateur.</strong></p>";
             echo "<meta http-equiv='refresh' content='3;URL=/?Page=Admin'>";
         }
     }
